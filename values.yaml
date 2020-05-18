@@ -390,6 +390,9 @@ client:
   image: null
   join: null
 
+  # Option to expose DNS ports
+  exposeDNSPorts: false
+
   # dataDirectoryHostPath is an absolute path to a directory on the host machine
   # to use as the Consul client data directory.
   # If set to the empty string or null, the Consul agent will store its data

@@ -272,9 +272,15 @@ spec:
             - containerPort: 8300
               name: server
             - containerPort: 8600
+              {{- if .Values.client.exposeDNSPorts }}
+              hostPort: 8600
+              {{- end }}
               name: dns-tcp
               protocol: "TCP"
             - containerPort: 8600
+              {{- if .Values.client.exposeDNSPorts }}
+              hostPort: 8600
+              {{- end }}
               name: dns-udp
               protocol: "UDP"
           readinessProbe:
